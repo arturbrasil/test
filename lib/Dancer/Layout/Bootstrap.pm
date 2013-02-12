@@ -121,7 +121,7 @@ get '/exercicios' => sub {
 };
 
 get '/aulas' => sub {
-    template 'aulas';
+    template 'videoplayer';
 };
 
 get '/sobre' => sub {
