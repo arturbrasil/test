@@ -16,6 +16,10 @@ cpanm DBD::SQLite
 ##Dançando e executando a WEBAPP. 
 perl -Ilib -w bin\app.pl
 
+ou
+
+plackup  ./bin/app.pl --port 3000
+
 ###De onde veio
 
 *http://twitter.github.com/bootstrap/ - Bootstrap
