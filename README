@@ -1,10 +1,10 @@
-## Eliminando problemas de LOCALE
+##Eliminando problemas de LOCALE
 export LANG="C"
 export LC_MESSAGES="C"
 export LANG=pt_BR.UTF-8
 export LC_ALL="C"
 export LANGUAGE=pt_BR:pt:en
-## Enquanto o MakeFileDecente não vem
+##Enquanto o MakeFileDecente não vem
 cpan App::cpanminus
 cpanm Dancer
 cpanm Template::Toolkit YAML
@@ -13,10 +13,10 @@ cpanm Dancer::Plugin::FlashMessage
 cpanm Authen::Simple::DBI    
 cpanm DBD::SQLite
 
-## Dançando e executando a WEBAPP. 
+##Dançando e executando a WEBAPP. 
 perl -Ilib -w bin\app.pl
 
-### De onde veio
+###De onde veio
 
 *http://twitter.github.com/bootstrap/ - Bootstrap
 *http://glyphicons.com/ - Icons from Glyphicons Free
