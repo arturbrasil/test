@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=<% settings.charset %>" />
+  <title>EAD</title>
+  <link rel="stylesheet" href="<% request.uri_base %>/css/bootstrap.css" />
+  <link href="<% request.uri_base %>/css/bootstrap-responsive.css" rel="stylesheet">
+  <link rel="stylesheet" href="<% request.uri_base %>/css/table-style.css" />
+  
+  <script src="<% request.uri_base %>/javascripts/jQuery/jquery-1.7.2.min.js"></script>
+
+
+</head>
+<body>
+
+  <div id="navbar" class="navbar">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand">EAD</a>
+
+        <% IF ! session.user %>
+        <form class="navbar-form pull-right" action="<% request.uri_base %>/user/login" method="post">
+    
+      <input id="idusername" name="username" class="span2" />
+      <input id="idpassword" name="password" class="span2" />
+      <button type="submit" class="btn">Entrar</button>
+    </form>
+
+        <div class="btn-group pull-right">
+          <a class="btn dropdown" data-toggle="dropdown" href="#">
+            <i class="icon-user"></i> Entrar
+            <span class="caret"></span>
+          </a>
+          
+          <ul class="dropdown-menu">
+           <form action="<% request.uri_base %>/user/login" method="get" accept-charset="UTF-8">
+            <input id="user_username" style="margin-bottom: 15px;" type="text" name="user[username]" size="30" />
+            <input id="user_password" style="margin-bottom: 15px;" type="password" name="user[password]" size="30" />
+            <input id="user_remember_me" style="float: left; margin-right: 10px;" type="checkbox" name="user[remember_me]" value="1" />
+            <label class="string optional" > Manter senha</label>
+
+            <input class="btn btn-primary" style="clear: left; width: 100%; height: 32px; font-size: 13px;" type="submit" name="commit" value="Entrar" />
+          </form>
+        </ul>
+      </div>
+      <% END %>
+
+      <% IF session.user %>
+      <div class="btn-group pull-right">
+        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+          <i class="icon-user"></i> <% session.user.name |html %>
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Perfil</a></li>
+          <li class="divider"></li>
+          <li><a href="<% request.uri_base %>/user/logout">Deixar de ser '<%session.user.name |html %>' </a></li>
+        </ul>
+      </div>
+      <% END %>
+      <ul class="nav">
+        <li><a href="<% request.uri_base %>">Home</a></li>
+        <% IF session.user %>
+        <li><a class="active navbar-link" href="<% request.uri_base %>/aulas">Aulas</a></li>
+        <li><a class="active navbar-link" href="<% request.uri_base %>/exercicios">Exercícios</a></li>
+        <% END %>
+
+        <li><a href="<% request.uri_base %>/sobre">Sobre</a></li>
+        <li><a href="<% request.uri_base %>/contatos">Contatos</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<% IF flash.error %>
+<div id="msg_error" class="alert alert-error"> <a class="close" data-dismiss="alert" href="#">×</a><% flash.error | html %> </div>
+<% END %>
+<% IF flash.message %>
+<div id="msg_message" class="alert"> <a class="close" data-dismiss="alert" href="#">×</a><% flash.message |html %> </div>
+<% END %>
+<% IF flash.success %>
+<div id="msg_success" class="alert alert-success"> <a class="close" data-dismiss="alert" href="#">×</a><% flash.success |html %> </div>
+<% END %>
+
+<% content %>
+
+<footer id="footer" class="span11">
+  Powered by <a href="http://perldancer.org/">Dancer</a> <% dancer_version %>
+  Using <a href="http://glyphicons.com/">Glyphicons</a> and <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>
+</footer>
+<script src="<% request.uri_base %>/javascripts/bootstrap-2.0.3/bootstrap.js"></script>
+<script src="<% request.uri_base %>/javascripts/bootstrap-2.0.3/bootstrap-alert.js"></script>
+</body>
+</html>
