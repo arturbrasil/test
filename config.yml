@@ -30,3 +30,10 @@ engines:
 #ession: 'simple'
 session: "cookie"
 session_cookie_key: "random encryption key"
+
+warnings: 1
+show_errors: 1
+auto_reload: 1
+log: 'debug'
+
+
