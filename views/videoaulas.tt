@@ -1,0 +1,19 @@
+                <div class="span5">
+                    <h2>Default setup demo</h2>
+                    <div class="videoUiWrapper thumbnail">
+                        <video width="370" height="214"  id="demo1">
+                            <source src="http://ia700305.us.archive.org/18/items/CopyingIsNotTheft/CINT_Nik_H264_720.ogv" type="video/ogg"> 
+                            <source src="http://ia700305.us.archive.org/18/items/CopyingIsNotTheft/CINT_Nik_H264_720_512kb.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+            <hr/>
+
+        </div>
+        <script type="text/javascript" src="assets/js/jquery-1.8.1.min.js"></script>
+        <script type="text/javascript" src="assets/js/jquery.video-ui.js"></script>
+        <script type="text/javascript" >
+            $('#demo1').videoUI();
+        </script>

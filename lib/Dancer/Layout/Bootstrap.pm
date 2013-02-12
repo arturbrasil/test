@@ -132,5 +132,8 @@ get '/contatos' => sub {
     template 'contatos';
 };
 
+get '/videoaulas' => sub {
+    template 'videoplayer';
+};
 
 true;
