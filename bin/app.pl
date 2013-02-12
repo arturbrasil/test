@@ -1,4 +1,4 @@
-#!C:\strawberry\perl\bin\perl.exe
+#!/usr/bin/perl
 use Dancer;
 use Dancer::Layout::Bootstrap;
 dance;
