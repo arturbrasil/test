@@ -1,19 +1,24 @@
+## Eliminando problemas de LOCALE
+export LANG="C"
+export LC_MESSAGES="C"
+export LANG=pt_BR.UTF-8
+export LC_ALL="C"
+export LANGUAGE=pt_BR:pt:en
+## Enquanto o MakeFileDecente não vem
+cpan App::cpanminus
+cpanm Dancer
+cpanm Template::Toolkit YAML
+cpanm Dancer::Session::Cookie
+cpanm Dancer::Plugin::FlashMessage
+cpanm Authen::Simple::DBI    
+cpanm DBD::SQLite
 
-      # Preview the layout
-      perl -Ilib -w bin\app.pl
+## Dançando e executando a WEBAPP. 
+perl -Ilib -w bin\app.pl
 
+### De onde veio
 
-NEEDED MODULES
-    The simple templating included with Dancer does not properly support
-    user log-in / log out, so the template needs Template::Toolkit.
-
-SEE ALSO
-    http://twitter.github.com/bootstrap/ - Bootstrap
-
-    http://bootswatch.com/ - Themes for Bootstrap
-
-    http://glyphicons.com/ - Icons from Glyphicons Free, licensed under CC
-    BY 3.0.
-
-    http://jquery.com/ - jQuery 1.7.2
+*http://twitter.github.com/bootstrap/ - Bootstrap
+*http://glyphicons.com/ - Icons from Glyphicons Free
+*http://jquery.com/ - jQuery 
 
