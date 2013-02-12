@@ -1,0 +1,17 @@
+<div class="row">
+<h2> Photo Grid/Thumbnails</h2>
+<p> show!</p>
+
+<ul id="dancing_gallery" class="thumbnails">
+[%### loop over the "photos" list, and create HTML for each photo %]
+[% FOREACH photo IN photos %]
+	<li  class="span2">
+		<a href="#" class="thumbnail">
+			<img src="[% request.uri_base %]/images/gallery/[% photo.file %]"
+				alt="[% photo.caption | html %]" />
+		</a>
+	</li>
+[% END %]
+</ul>
+
+</div>

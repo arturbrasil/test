@@ -2,6 +2,7 @@ package Dancer::Layout::Bootstrap;
 use Dancer ':syntax';
 use Dancer::Plugin::FlashMessage;
 use Authen::Simple::DBI;
+use Dancer::Layout::Fotogrid;
     
 
 =head1 NAME

@@ -1,4 +1,5 @@
 
+<% IF session.user %>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -115,5 +116,10 @@
 });
 
         </script>
+<% ELSE %>
+  <div id="getting-started" class="hero-unit span9">
+          <h1>Você não está logado</h1>
+
+<% END %>
     </body>
 </html>
