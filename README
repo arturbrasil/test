@@ -13,6 +13,20 @@ cpanm Dancer::Plugin::FlashMessage
 cpanm Authen::Simple::DBI    
 cpanm DBD::SQLite
 
+
+
+hack pro problema com o Dancer::Session::Cookie :)
+
+-- Can't locate object method "autoflush" via package "FileHandle" --
+-- BEGIN failed--compilation aborted at bin/app.pl line 2. --
+
+comentar a linha 58 Dance::Logger::File.pm:
+    $fh->autoflush;
+o problema eh relacionado ao FileHandle, inteface para IO::Handle, porem nao encontrei a resposta exata
+
+
+
+
 ##Dançando e executando a WEBAPP. 
 perl -Ilib -w bin\app.pl
 

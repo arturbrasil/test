@@ -433,3 +433,26 @@
 
         </script>
 <% ELSE %] at /usr/local/share/perl/5.14.2/Dancer/Template/Abstract.pm line 89. in /usr/local/share/perl/5.14.2/Dancer/Handler.pm l. 98
+[4775] error @0.417217> [hit #683]request to GET / crashed: core - template - file error - parse error - /home/k4k4/artur/test/views/layouts/bootstrap.tt line 46-51: unexpected token ($)
+  [% END $>
+  		    		</ul>
+			</div>
+		</div>
+	</div>
+	<% IF flash.error %] at /usr/lib/perl5/site_perl/5.10.0/Dancer/Template/Abstract.pm line 129. in /usr/lib/perl5/site_perl/5.10.0/Dancer/Handler.pm l. 98
+[4775] error @0.022474> [hit #686]request to GET / crashed: core - template - file error - parse error - /home/k4k4/artur/test/views/layouts/bootstrap.tt line 44: unexpected token (=)
+  [% IF session.user  = admin %] at /usr/lib/perl5/site_perl/5.10.0/Dancer/Template/Abstract.pm line 129. in /usr/lib/perl5/site_perl/5.10.0/Dancer/Handler.pm l. 98
+[4775] error @0.025736> [hit #689]request to GET / crashed: core - template - file error - parse error - /home/k4k4/artur/test/views/layouts/bootstrap.tt line 44: unexpected token (=)
+  [% IF session.user  = admin %] at /usr/lib/perl5/site_perl/5.10.0/Dancer/Template/Abstract.pm line 129. in /usr/lib/perl5/site_perl/5.10.0/Dancer/Handler.pm l. 98
+[4775] error @0.030496> [hit #692]request to GET / crashed: core - template - file error - parse error - /home/k4k4/artur/test/views/layouts/bootstrap.tt line 44: unexpected token (=)
+  [% IF session.user  = admin %] at /usr/lib/perl5/site_perl/5.10.0/Dancer/Template/Abstract.pm line 129. in /usr/lib/perl5/site_perl/5.10.0/Dancer/Handler.pm l. 98
+[4775] error @0.031654> [hit #694]request to GET / crashed: core - template - file error - parse error - /home/k4k4/artur/test/views/layouts/bootstrap.tt line 44: unexpected token (=)
+  [% IF session.user  = admin %] at /usr/lib/perl5/site_perl/5.10.0/Dancer/Template/Abstract.pm line 129. in /usr/lib/perl5/site_perl/5.10.0/Dancer/Handler.pm l. 98
+[4775] error @0.037741> [hit #696]request to GET / crashed: core - template - file error - parse error - /home/k4k4/artur/test/views/layouts/bootstrap.tt line 44: unexpected token (=)
+  [% IF session.user  = admin %] at /usr/lib/perl5/site_perl/5.10.0/Dancer/Template/Abstract.pm line 129. in /usr/lib/perl5/site_perl/5.10.0/Dancer/Handler.pm l. 98
+[4775] error @0.052709> [hit #698]request to GET / crashed: core - template - file error - parse error - /home/k4k4/artur/test/views/layouts/bootstrap.tt line 44: unexpected token (=)
+  [% IF session.user  = admin %] at /usr/lib/perl5/site_perl/5.10.0/Dancer/Template/Abstract.pm line 129. in /usr/lib/perl5/site_perl/5.10.0/Dancer/Handler.pm l. 98
+[4775] error @0.031008> [hit #714]request to GET / crashed: core - template - file error - parse error - /home/k4k4/artur/test/views/layouts/bootstrap.tt line 44: unexpected token (=)
+  [% IF session.user  = admin %] at /usr/lib/perl5/site_perl/5.10.0/Dancer/Template/Abstract.pm line 129. in /usr/lib/perl5/site_perl/5.10.0/Dancer/Handler.pm l. 98
+[4775] error @0.032638> [hit #764]request to GET /aulas crashed: core - template - file error - parse error - /home/k4k4/artur/test/views/layouts/bootstrap.tt line 44: unexpected token (=)
+  [% IF session.user  = "admin" %] at /

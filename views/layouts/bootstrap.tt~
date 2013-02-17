@@ -41,7 +41,7 @@
         				<% END %>
       				  		<li><a href="<% request.uri_base %>/sobre">Sobre</a></li>
       				  		<li><a href="<% request.uri_base %>/contatos">Contatos</a></li>
-        				<% IF session.user.name  == "admin" %>
+        				<% IF session.user  = "admin" %>
 						<li><a class="active navbar-link" href="<% request.uri_base %>/admin">Admin</a></li>
 					<% END %>
   		    		</ul>

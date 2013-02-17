@@ -1,0 +1,17 @@
+
+<% IF session.user.name == "admin" %>
+    <div id="actions">
+        <ul>
+	    <li>Adicionar usuario</li>
+	    <li>Adicionar Curso</li>
+	    <li>Suspender usuario</li>
+        </ul>
+    </div>
+<script>
+    $("#actions").menu();
+</script>
+	<% ELSE %>
+		<div id="getting-started" class="hero-unit span9">
+        		<h1>Você não está logado</h1>
+		</div>
+	<% END %>

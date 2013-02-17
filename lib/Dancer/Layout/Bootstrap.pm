@@ -137,4 +137,10 @@ get '/videoaulas' => sub {
     template 'videoplayer';
 };
 
+get '/admin' => sub {
+    template 'admin';
+};
+
+
+
 true;
