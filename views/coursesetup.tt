@@ -1,0 +1,4 @@
+<a class="text-center">adicionar curso</a></br>
+<a>usuario:</a><input name="user" type="text"></input><input name="adicionar" type="submit" class="btn-mini"></input>
+
+

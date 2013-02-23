@@ -148,7 +148,7 @@ get '/admin/useradd' => sub {
 
 
 get '/admin/courseadd' => sub {
-    template 'admin', { 'currentaction' => 'courseadd',};
+    template 'admin', { 'curentaction' => 'courseadd',};
 };
 
 

@@ -1,67 +1,173 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <meta http-equiv="Content-type" content="text/html; charset=<% settings.charset %>" />
-  <title>EAD</title>
-  <link rel="stylesheet" href="<% request.uri_base %>/css/bootstrap.css" />
-  <link href="<% request.uri_base %>/css/bootstrap-responsive.css" rel="stylesheet">
-  <link rel="stylesheet" href="<% request.uri_base %>/css/table-style.css" />
-  <script src="<% request.uri_base %>/javascripts/jQuery/jquery-1.7.2.min.js"></script>
-</head>
-<body>
-	<div id="navbar" class="navbar">
-		<div class="navbar-inner">
-			<div class="container">
-		        	<a class="brand">EAD</a>
-				<% IF ! session.user %>
-					<form class="navbar-form pull-right" action="<% request.uri_base %>/user/login" method="post">
-			      			<input id="idusername" type=text name="username" class="span2" />
-	      					<input id="idpassword" type="password" name="password" class="span2" />
-			      			<button type="submit" type=submit class="btn">Entrar</button>
-			    		</form>
-				<% END %>
-				<% IF session.user %>
-					<div class="btn-group pull-right">
-						<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-							<i class="icon-user"></i> <% session.user.name |html %>
-			          			<span class="caret"></span>
-		        			</a>
-		        			<ul class="dropdown-menu">
-		          				<li><a href="#">Perfil</a></li>
-		          				<li class="divider"></li>
-        		  				<li><a href="<% request.uri_base %>/user/logout">Deixar de ser '<%session.user.name |html %>' </a></li>
-        					</ul>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=<% settings.charset %>" />
+		<title>EAD</title>
+		<link rel="stylesheet" href="<% request.uri_base %>/css/bootstrap.css" />
+		<link rel="stylesheet" href="<% request.uri_base %>/css/ead.css" />
+		<link href="<% request.uri_base %>/css/bootstrap-responsive.css" rel="stylesheet">
+		<link rel="stylesheet" href="<% request.uri_base %>/css/table-style.css" />
+		<script src="<% request.uri_base %>/javascripts/jQuery/jquery-1.7.2.min.js"></script>
+		<style>
+			body {
+				min-width: 550px;
+			}
+			#mainbox {
+				padding-left: 200px;
+				padding-right: 150px;
+			}
+			#mainbox .coluna {
+				position: relative;
+				float: left;
+			}
+			#centro {
+				width: 100%;
+			}
+			#esquerda {
+				width: 200px;
+				right: 200px;
+				margin-left: -100%;
+			}
+			#direita {
+				width: 150px;
+				margin-right: -100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="header">
+			<img alt="EAD cursos online main logo" src="http://aneega.com/wp-content/uploads/2012/08/shutterstock_67255261.jpg" style="max-height: 100px" />
+			<tt class="pull-right">Seu curso, seu <b>Futuro!</b><br />nao perca tempo, matricule-se ja clicando <a href="/matricula">aqui</a></tt>
+			<div id="navbar" class="navbar">
+				<div class="navbar-inner">
+					<div class="container">
+				        	<a class="brand">EAD</a>
+						<% IF ! session.user %>
+							<form class="navbar-form pull-right" action="<% request.uri_base %>/user/login" method="post">
+					      			<input id="idusername" type=text name="username" class="span2" />
+			      					<input id="idpassword" type="password" name="password" class="span2" />
+					      			<button type="submit" type=submit class="btn">Entrar</button>
+					    		</form>
+						<% END %>
+						<% IF session.user %>
+							<div class="btn-group pull-right">
+								<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+									<i class="icon-user"></i> <% session.user.name |html %>
+					          			<span class="caret"></span>
+				        			</a>
+				        			<ul class="dropdown-menu">
+				          				<li><a href="#">Perfil</a></li>
+			          				<li class="divider"></li>
+		        		  				<li><a href="<% request.uri_base %>/user/logout">Deixar de ser '<%session.user.name |html %>'</a></li>
+		        					</ul>
+							</div>
+						<% END %>
+		    		  		<ul class="nav">
+		       			 		<li><a href="<% request.uri_base %>">Home</a></li>
+		        				<% IF session.user %>
+		        					<li><a class="active navbar-link" href="<% request.uri_base %>/aulas">Aulas</a></li>
+		        					<li><a class="active navbar-link" href="<% request.uri_base %>/exercicios">Exercícios</a></li>
+		        				<% END %>
+		      				  		<li><a href="<% request.uri_base %>/sobre">Sobre</a></li>
+		      				  		<li><a href="<% request.uri_base %>/contatos">Contatos</a></li>
+		        				<% IF session.user.name  == "admin" %>
+								<li><a class="active navbar-link" href="<% request.uri_base %>/admin">Admin</a></li>
+							<% END %>
+		  		    		</ul>
 					</div>
-				<% END %>
-    		  		<ul class="nav">
-       			 		<li><a href="<% request.uri_base %>">Home</a></li>
-        				<% IF session.user %>
-        					<li><a class="active navbar-link" href="<% request.uri_base %>/aulas">Aulas</a></li>
-        					<li><a class="active navbar-link" href="<% request.uri_base %>/exercicios">Exercícios</a></li>
-        				<% END %>
-      				  		<li><a href="<% request.uri_base %>/sobre">Sobre</a></li>
-      				  		<li><a href="<% request.uri_base %>/contatos">Contatos</a></li>
-        				<% IF session.user.name  == "admin" %>
-						<li><a class="active navbar-link" href="<% request.uri_base %>/admin">Admin</a></li>
-					<% END %>
-  		    		</ul>
+				</div>
+			</div> <!-- fim da navbar  -->
+		</div> <!-- fim do header  -->
+
+		<div id="mainbox">
+		<% IF flash.error %>
+			<div id="msg_error" class="alert alert-error"> <a class="close" data-dismiss="alert" href="#"></a>
+				<% flash.error | html %>
 			</div>
+		<% END %>
+
+		<% IF flash.message %>
+			<div id="msg_message" class="alert"><a class="close" data-dismiss="alert" href="#"></a><% flash.message |html %> </div>
+		<% END %>
+		<% IF flash.success %>
+			<div id="msg_success" class="alert alert-success"> <a class="close" data-dismiss="alert" href="#"></a><% flash.success |html %> </div>
+		<% END %>
+			<div id="centro" class="coluna" >	
+				<% content %>
+			</div>
+			<div id="esquerda" class="coluna">
+				<div id="sidebar" class="span2 sidebar-nav">
+					<ul id="sidebar-items" class="nav nav-list">
+						<li>
+							<h3 class="nav-header">Cursos </h3>
+							<ul class="nav nav-list">
+								<li><a href="">Redes</a></li>
+								<li><a href="">Linux</a></li>
+								<li><a href="">Web-Design</a></li>
+							</ul>
+							</li>
+						<li>
+							<h3 class="nav-header">Projeto</h3>
+							<ul class="nav nav-list">
+								<li><a href="">Redes</a></li>
+								<li><a href="">Linux</a></li>
+								<li><a href="">Web-Design</a></li>
+							</ul>
+							</li>
+						<li>
+							<h3 class="nav-header">Promoções</h3>
+							<ul class="nav nav-list">
+								<li>Curso Redes: <code> Apenas R$ 49,90</code></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div id="direita" class="coluna">
+
+				<div id="sidebar" class="span2 sidebar-nav">
+					<ul id="sidebar-items" class="nav nav-list">
+						<li>
+							<h3 class="nav-header">Cursos </h3>
+							<ul class="nav nav-list">
+								<li><a href="">Redes</a></li>
+								<li><a href="">Linux</a></li>
+								<li><a href="">Web-Design</a></li>
+							</ul>
+						</li>
+						<li>
+							<h3 class="nav-header">Projeto</h3>
+							<ul class="nav nav-list">
+								<li><a href="">Redes</a></li>
+								<li><a href="">Linux</a></li>
+								<li><a href="">Web-Design</a></li>
+							</ul>
+						</li>
+						<li>
+							<h3 class="nav-header">Promoções</h3>
+							<ul class="nav nav-list">
+								<li>Curso Redes:<code>Apenas R$49,90</code></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+
+
+
+
+
+
+
+			</div>
+
+		</div> <!-- fim do container -->
+
+
+		<div id="footer" class="navbar-inner center" style="color: #ccc; text-align: center; height: 60px; bottom:0px; clear:both">
+			<b>EAD Cursos - 2013</b><br />
 		</div>
-	</div>
-	<% IF flash.error %>
-		<div id="msg_error" class="alert alert-error"> <a class="close" data-dismiss="alert" href="#">×</a><% flash.error | html %> </div>
-	<% END %>
-	<% IF flash.message %>
-		<div id="msg_message" class="alert"> <a class="close" data-dismiss="alert" href="#">×</a><% flash.message |html %> </div>
-	<% END %>
-	<% IF flash.success %>
-		<div id="msg_success" class="alert alert-success"> <a class="close" data-dismiss="alert" href="#">×</a><% flash.success |html %> </div>
-	<% END %>
-	<% content %>
-	<footer id="footer" class="span11">
-		<a>Cursos OnLine - 2013</a>
-	</footer>
-	<script src="<% request.uri_base %>/javascripts/bootstrap-2.0.3/bootstrap.js"></script>
-	<script src="<% request.uri_base %>/javascripts/bootstrap-2.0.3/bootstrap-alert.js"></script>
-</body>
+		<script src="<% request.uri_base %>/javascripts/bootstrap-2.0.3/bootstrap.js"></script>
+		<script src="<% request.uri_base %>/javascripts/bootstrap-2.0.3/bootstrap-alert.js"></script>
+	</body>
 </html>

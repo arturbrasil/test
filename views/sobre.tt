@@ -1,41 +1,8 @@
-
-      <div id="content">
-        <div id="header">
-          <h1>Aulas</h1>
-          <h2>O melhor ensino!</h2>
-        </div>
-
-        <div id="getting-started" class="hero-unit span9">
-          <h1>Falarei de nós à você!!!</h1>
-          <h2>Em Construção</h2>
-                    
-          <h3><a href="#" id="about_env_link">Desenvolvido com:</a></h3>
-
-          <div id="about-content" style="display: none;">
-            <table>
-                <tbody>
-                <tr>
-                    <td>Perl version</td>
-                    <td><tt><% perl_version %></tt></td>
-                </tr>
-                <tr>
-                    <td>Dancer version</td>
-                    <td><tt><% dancer_version %></tt></td>
-                </tr>
-                <tr>
-                    <td>Backend</td>
-                    <td><tt><% settings.apphandler %></tt></td>
-                </tr>
-      
-                </tbody>
-            </table>
-          </div>
-
-    <script type="text/javascript">
-    $('#about_env_link').click(function() {
-        $('#about-content').slideToggle('fast', function() {
-            // ok
-        });
-    });
-    </script>
-    <br>
+	<div id="headera">
+		<h1>Aulas</h1>
+		<h2>O melhor ensino</h2>
+	</div>
+	<div class="hero-unit">
+		<h1>Falarei de nos a voce</h1>
+		<h2>Em Construcao</h2>
+	</div>

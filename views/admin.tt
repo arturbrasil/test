@@ -1,17 +1,50 @@
 
 <% IF session.user.name == "admin" %>
-    <div id="actions">
-        <ul>
-	    <li>Adicionar usuario</li>
-	    <li>Adicionar Curso</li>
-	    <li>Suspender usuario</li>
-        </ul>
-    </div>
-<script>
-    $("#actions").menu();
-</script>
-	<% ELSE %>
-		<div id="getting-started" class="hero-unit span9">
-        		<h1>Você não está logado</h1>
-		</div>
+<div style="text-align: center">
+	<h2>Administracao do sistema</h2>
+	<% SWITCH currentaction %>
+		<% CASE 'useradd' %>
+			<h4>Adicionar usuario<h4>
+		<% CASE 'courseadd' %>
+			<h4>Adicionar curso<h4>
+		<% CASE 'none' %>
+			<h4>Selecione uma acao<h4>
 	<% END %>
+</div>
+
+	<div id="act_select" class="navbar">
+		<div class="navbar-inner">
+		<ul class="nav">
+<!--	 	    <li class="nav-header">Acoes</li> 		-->
+			<li class="divider"><li>
+		    <li><a href="/admin/useradd">Adicionar usuario</a></li>
+			<li class="divider"><li>
+		    <li><a href="/admin/courseadd">Adicionar Curso</a></li>
+			<li class="divider"><li>
+		    <li><a href="/admin/surpend/user">Suspender usuario</a></li>
+			<li class="divider"><li>
+	        </ul>
+		</div>
+	</div>
+
+<div id="action" class="containera" style="min-height: 30px">
+	<br />
+	<br />
+	 
+	<% SWITCH currentaction %>
+		<% CASE 'useradd' %>
+			<% INCLUDE 'usersetup.tt' %>
+		<% CASE 'courseadd' %>
+			<% INCLUDE 'coursesetup.tt' %>
+		<% CASE 'none' %>
+			<a> selecione uma acao </a>
+	<% END %>
+</div>
+
+<% ELSE %>
+	<div id="getting-started" class="hero-unit span9">
+       		<h1>Voce nao ta logado</h1>
+	</div>
+<% END %>
+
+
